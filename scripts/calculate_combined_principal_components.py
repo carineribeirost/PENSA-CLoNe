@@ -9,7 +9,7 @@ from pensa.dimensionality import \
     sort_trajs_along_common_pc, \
     compare_projections
 from pensa.comparison import \
-    pca_features
+    pca_feature_correlation
 
 # -------------#
 # --- MAIN --- #
@@ -75,8 +75,9 @@ if __name__ == "__main__":
         delimiter=', ', header='Component, Eigenvalue'
     )
     # Plot feature correlation with top components and print relevant features
-    pca_features(
-        pca, feat_a[ftype], data_a[ftype], args.num_components, args.feat_threshold,
+    pca_feature_correlation(
+        feat_a[ftype], data_a[ftype], pca=pca, 
+        num=args.num_components, threshold=args.feat_threshold,
         plot_file=args.out_plots + "_" + ftype + "_feature_correlation.pdf"
     )
     # Sort each of the trajectories along the top components of combined data
