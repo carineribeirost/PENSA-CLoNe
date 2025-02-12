@@ -8,7 +8,7 @@ Create and activate a conda environment:
 
   .. code:: bash
 
-    conda create --name pensa python==3.10 scipy numpy pandas matplotlib MDAnalysis==2.8 deeptime biotite pip -c conda-forge
+    conda create --name pensa python==3.10 scipy numpy==1.26.4 pandas matplotlib MDAnalysis==2.8 deeptime biotite pip -c conda-forge
     conda activate pensa
 
 If you want to use PENSA with Jupyter notebooks:
